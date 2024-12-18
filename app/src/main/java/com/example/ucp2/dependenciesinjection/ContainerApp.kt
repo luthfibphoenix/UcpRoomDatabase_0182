@@ -9,11 +9,14 @@ import com.example.ucp2.repository.RepositoryMk
 
 interface InterfaceContainerApp {
     val repositoryDsn: RepositoryDsn
-    val ropositoryMk: RepositoryMk
+    val repositoryMk: RepositoryMk
 }
 
 class ContainerApp (private val context: Context) : InterfaceContainerApp {
     override val repositoryDsn: RepositoryDsn by lazy {
-        LocalRepositoryDsn(KRSDatabase.getDatabase(context).DosenDao())
+        LocalRepositoryDsn(KRSDatabase.getDatabase(context).dosenDao())
+    }
+    override val repositoryMk: RepositoryMk by lazy {
+        LocalRepositoryMk(KRSDatabase.getDatabase(context).mataKuliahDao())
     }
 }

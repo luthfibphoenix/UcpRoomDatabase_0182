@@ -13,8 +13,8 @@ import com.example.ucp2.data.entity.MataKuliah
 @Database(entities = [Dosen::class, MataKuliah::class], version = 1, exportSchema = false)
 abstract class KRSDatabase : RoomDatabase() {
 
-    abstract fun DosenDao() : DosenDao
-    abstract fun MataKuliahDao() : MataKuliahDao
+    abstract fun dosenDao() : DosenDao
+    abstract fun mataKuliahDao() : MataKuliahDao
 
     companion object{
         @Volatile
